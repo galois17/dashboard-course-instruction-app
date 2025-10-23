@@ -5,7 +5,7 @@ import plotly.express as px
 
                                   
 st.set_page_config(
-    page_title="GA4 Dashboard",
+    page_title="Dashboard",
     layout="wide",
     page_icon="📊",
     initial_sidebar_state="expanded"
@@ -238,7 +238,7 @@ PAGES = {
 
                               
 st.markdown(
-    f"<h2 style='text-align:center; color:{ACCENT_COLOR};'>GA4 Analytics Dashboard</h2>",
+    f"<h2 style='text-align:center; color:{ACCENT_COLOR};'>Analytics Dashboard</h2>",
     unsafe_allow_html=True,
 )
 
