@@ -91,7 +91,7 @@ def show_daily_events() -> None:
     col2.metric("Event Types", f"{len(selected)} selected")
 
                     
-    tab1, tab2 = st.tabs(["Event Counts", "Rolling Average"])
+    tab1, tab2, tab3 = st.tabs(["Event Counts", "Rolling Average", "Weekday vs Weekend"])
     chart_df = filtered.pivot(index="event_date", columns="event_name", values="event_count")
     avg_df = (
         filtered.pivot(index="event_date", columns="event_name", values="rolling_7d_avg")
@@ -107,7 +107,26 @@ def show_daily_events() -> None:
         if avg_df is not None:
             fig2 = px.line(avg_df, markers=False, title="7-Day Rolling Average")
             st.plotly_chart(fig2, use_container_width=True)
+    with tab3:
+        df_weekend = filtered.copy()
+        df_weekend['is_weekend'] = df_weekend['event_date'].dt.weekday >= 5
+        print(df_weekend.loc[0:2])
+        df_weekend['day_type'] = df_weekend['is_weekend'].map({True: 'weekend', False: 'weekday'})
+        df_weekend['day_name'] = df_weekend['event_date'].dt.day_name()
+        daily_activity = (
+            df_weekend.groupby(["event_date", "day_type"])["event_count"]
+            .sum()
+            .reset_index()
+        )
+        print(daily_activity)
 
+        fig = px.box(daily_activity, x="day_type", y="event_count",
+                         labels={
+                                "day_type": "Day Type",         # X-axis label
+                                "event_count": "Event Count"    # Y-axis label
+                         },
+                         title="Engagement Intensity by Event")
+        st.plotly_chart(fig, use_container_width=True)
     # st.dataframe(filtered, use_container_width=True)
 
 
