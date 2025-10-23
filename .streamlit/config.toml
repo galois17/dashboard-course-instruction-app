@@ -1,8 +1,0 @@
-# This is the entire file.
-# Remove the [server] section completely.
-
-[embed]
-allowedOrigins = [
-  "https://statsapp.baxterbearlabs.com",
-  "http://localhost:3000",
-]
