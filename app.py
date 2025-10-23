@@ -29,9 +29,9 @@ def load_csv(filename: str) -> pd.DataFrame:
         st.stop()
     return pd.read_csv(path)
 
-button = st.button("Say Hello")
-if button:
-    st.write("Hello there!")
+# button = st.button("Say Hello")
+# if button:
+#     st.write("Hello there!")
 
 
 def show_daily_events() -> None:
@@ -108,7 +108,7 @@ def show_daily_events() -> None:
             fig2 = px.line(avg_df, markers=False, title="7-Day Rolling Average")
             st.plotly_chart(fig2, use_container_width=True)
 
-    st.dataframe(filtered, use_container_width=True)
+    # st.dataframe(filtered, use_container_width=True)
 
 
 def show_top_pages():
@@ -134,7 +134,7 @@ def show_top_pages():
         st.metric("Top Page", df.loc[df["page_views"].idxmax(), "page_title"])
         st.metric("Total Views", f"{df['page_views'].sum():,}")
 
-    st.dataframe(df.head(25), use_container_width=True)
+    # st.dataframe(df.head(25), use_container_width=True)
 
 def show_top_countries():
     """
@@ -161,7 +161,7 @@ def show_top_countries():
         )
         st.plotly_chart(fig, use_container_width=True)
 
-    st.dataframe(df, use_container_width=True)
+    # st.dataframe(df, use_container_width=True)
 
 
 def show_devices():
@@ -179,7 +179,7 @@ def show_devices():
                      title="Average Sessions per User by Device")
         st.plotly_chart(fig, use_container_width=True)
 
-    st.dataframe(df, use_container_width=True)
+    # st.dataframe(df, use_container_width=True)
 
 
 def show_traffic_sources():
@@ -201,7 +201,7 @@ def show_traffic_sources():
         )
         st.plotly_chart(fig, use_container_width=True)
 
-    st.dataframe(df, use_container_width=True)
+    # st.dataframe(df, use_container_width=True)
 
 
 def show_hourly_activity():
@@ -223,7 +223,7 @@ def show_hourly_activity():
                                  color_continuous_scale="Blues")
         st.plotly_chart(fig, use_container_width=True)
 
-    st.dataframe(df, use_container_width=True)
+    # st.dataframe(df, use_container_width=True)
 
 
                                     
