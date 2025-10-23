@@ -2,9 +2,6 @@
 headless = true
 enableCORS = false
 
-[browser]
-serverAddress = "statsapp.baxterbearlabs.com"
-
 [embed]
 allowedOrigins = [
   "https://statsapp.baxterbearlabs.com",
