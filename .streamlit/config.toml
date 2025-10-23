@@ -1,6 +1,5 @@
-[server]
-headless = true
-enableCORS = false
+# This is the entire file.
+# Remove the [server] section completely.
 
 [embed]
 allowedOrigins = [
