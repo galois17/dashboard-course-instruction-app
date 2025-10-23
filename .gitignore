@@ -1,3 +1,58 @@
+# ------------------------------
+# Streamlit GA4 Dashboard Ignore
+# ------------------------------
+
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Environments
+.env
+.venv/
+venv/
+env/
+*.env
+
+# IDE and editor settings
+.vscode/
+.idea/
+.DS_Store
+
+# Logs and temp data
+*.log
+*.tmp
+*.bak
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Python build artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# Streamlit cache (auto-generated)
+.streamlit/
+
+# Data backups or large files
+data_backup/
+data_raw/
+*.zip
+*.tar.gz
+
+# Uncomment this line if you have sensitive data
+# data/
+
+# System files
+Thumbs.db
+
+
+
 rename_it.sh
 clean.sh
 clean.py
