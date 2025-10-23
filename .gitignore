@@ -51,7 +51,8 @@ data_raw/
 # System files
 Thumbs.db
 
-
+app2.py
+app3.py
 
 rename_it.sh
 clean.sh
