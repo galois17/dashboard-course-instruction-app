@@ -37,7 +37,7 @@ dist/
 .eggs/
 
 # Streamlit cache (auto-generated)
-.streamlit/
+#.streamlit/
 
 # Data backups or large files
 data_backup/
